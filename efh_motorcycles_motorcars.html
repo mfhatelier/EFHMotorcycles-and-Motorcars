@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFH Motorcycles & Motorcars | Belagavi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Outfit:wght@200;300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .ducati-font {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* Ducati Red Accent Color */
+        :root {
+            --ducati-red: #ff0024;
+            --ducati-dark-red: #cc001c;
+        }
+
+        .bg-ducati-red {
+            background-color: var(--ducati-red);
+        }
+
+        .text-ducati-red {
+            color: var(--ducati-red);
+        }
+
+        .border-ducati-red {
+            border-color: var(--ducati-red);
+        }
+
+        /* Custom Ducati-style sharp corner & diagonal cuts */
+        .sharp-clip {
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+        }
+
+        .btn-diagonal {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .btn-diagonal::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.6s ease;
+        }
+
+        .btn-diagonal:hover::after {
+            left: 100%;
+        }
+
+        /* Grid Hover effects */
+        .model-card img {
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .model-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .red-line-glow {
+            box-shadow: 0 4px 20px rgba(255, 0, 36, 0.4);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1a1a1a;
+            border: 2px solid #000000;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--ducati-red);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-black border-b border-zinc-900 py-2.5 text-center text-[10px] tracking-[0.3em] font-semibold uppercase text-zinc-400">
+        <span class="inline-block w-2 h-2 rounded-full bg-ducati-red mr-2 animate-pulse"></span>
+        We Believe in Quality • Dedicated Superbike & Exotic Car Lab
+    </div>
+
+    <!-- Header Navigation -->
+    <nav class="sticky top-0 w-full z-50 bg-black/95 border-b border-zinc-900 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Ducati-Inspired Brand Logo / Text Signature -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="bg-ducati-red text-white p-3 font-black text-xl tracking-tighter ducati-font skew-x-[-12deg] shadow-lg red-line-glow">
+                        EFH
+                    </div>
+                    <div class="leading-none">
+                        <span class="ducati-font text-lg font-bold tracking-widest text-white block">EFH MOTORCYCLES</span>
+                        <span class="text-[9px] uppercase tracking-[0.4em] text-zinc-500 font-bold">&amp; MOTORCARS</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-[0.25em] font-bold text-zinc-400">
+                    <a href="#home" class="hover:text-white transition duration-300">Home</a>
+                    <a href="#experience" class="hover:text-white transition duration-300">Experience</a>
+                    <a href="#catalog" class="hover:text-white transition duration-300">The Garage</a>
+                    <a href="#contact" class="hover:text-white transition duration-300">Contact Us</a>
+                </div>
+
+                <!-- Call to Action button -->
+                <div class="flex items-center gap-4">
+                    <a href="https://wa.me/918197180481" target="_blank" class="hidden lg:flex items-center gap-2 text-[10px] uppercase tracking-widest text-zinc-400 hover:text-white transition">
+                        <i class="fab fa-whatsapp text-lg text-emerald-500"></i> LIVE CHAT
+                    </a>
+                    <a href="#contact" class="bg-ducati-red hover:bg-zinc-100 hover:text-black text-white text-xs uppercase tracking-[0.2em] font-bold py-3.5 px-6 skew-x-[-10deg] transition duration-300 btn-diagonal">
+                        <span class="inline-block skew-x-[10deg]">Book Service</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Main Showcase Section -->
+    <section id="home" class="relative h-[90vh] flex items-center overflow-hidden bg-black">
+        <!-- Visual Background -->
+        <div class="absolute inset-0 bg-cover bg-center z-0 scale-105" style="background-image: url('https://images.unsplash.com/photo-1558981403-c5f91cbba527?auto=format&fit=crop&w=2000&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10"></div>
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-10"></div>
+
+        <!-- Content Frame -->
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-2xl">
+                <!-- Slim top tag line -->
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="h-[1px] w-12 bg-ducati-red"></span>
+                    <span class="text-xs uppercase tracking-[0.4em] text-ducati-red font-extrabold">Italian-Style Engineering Care</span>
+                </div>
+
+                <!-- Epic Bold Typography -->
+                <h1 class="ducati-font text-6xl sm:text-8xl font-extrabold text-white leading-none tracking-tight uppercase mb-6">
+                    DESIGNED FOR<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-zinc-500">PERFORMANCE</span>
+                </h1>
+
+                <p class="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-lg mb-10 font-light tracking-wide">
+                    The absolute benchmark of professional superbike tuning, pristine diagnostic scan systems, and exquisite detail restorations in Belagavi.
+                </p>
+
+                <!-- Navigation Controls -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#catalog" class="bg-ducati-red hover:bg-white text-white hover:text-black text-xs font-bold uppercase tracking-[0.2em] py-4.5 px-10 transition duration-300 text-center btn-diagonal">
+                        Explore Garage Services
+                    </a>
+                    <a href="#contact" class="border border-zinc-700 hover:border-white text-white text-xs font-bold uppercase tracking-[0.2em] py-4.5 px-10 transition duration-300 text-center">
+                        Consult Our Techs
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stylistic Vertical Side Banner -->
+        <div class="absolute right-12 bottom-12 hidden xl:block z-20">
+            <div class="text-right tracking-[0.5em] text-[10px] uppercase text-zinc-600 font-bold rotate-90 origin-right whitespace-nowrap">
+                EFH PERFORMANCE CENTRE • EST 2017
+            </div>
+        </div>
+    </section>
+
+    <!-- Modular Feature Grid ("EFH Experience" style) -->
+    <section id="experience" class="py-24 bg-black border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-4">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-ducati-red font-bold block mb-3">Our DNA</span>
+                    <h2 class="ducati-font text-4xl sm:text-5xl font-bold tracking-tight text-white uppercase">
+                        THE EFH <span class="text-ducati-red">EXPERIENCE</span>
+                    </h2>
+                </div>
+                <div class="max-w-md">
+                    <p class="text-zinc-500 text-sm leading-relaxed">
+                        Every vehicle that enters our bay undergoes rigorous multi-point checkups. No shortcuts, no compromises. Only purest engineering values.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Double Column Bold Highlight Block -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <!-- Column 1: Restorations -->
+                <div class="relative group overflow-hidden h-[450px]">
+                    <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-105 transition duration-700" style="background-image: url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1200&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-10 left-10 right-10">
+                        <span class="text-[10px] tracking-widest text-ducati-red uppercase font-bold block mb-2">Heritage Lab</span>
+                        <h3 class="ducati-font text-3xl font-extrabold text-white uppercase mb-3">Restoration Projects</h3>
+                        <p class="text-zinc-300 text-xs font-light max-w-sm mb-6">Complete rebuilds of iconic classics, multi-cylinder monsters, and aesthetic customization.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-extrabold text-ducati-red hover:text-white transition">
+                            Begin Restoration Diary <i class="fas fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Tech/Diagnostics -->
+                <div class="relative group overflow-hidden h-[450px]">
+                    <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-105 transition duration-700" style="background-image: url('https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-10 left-10 right-10">
+                        <span class="text-[10px] tracking-widest text-ducati-red uppercase font-bold block mb-2">Digital Diagnostics</span>
+                        <h3 class="ducati-font text-3xl font-extrabold text-white uppercase mb-3">OBD Diagnostic Suite</h3>
+                        <p class="text-zinc-300 text-xs font-light max-w-sm mb-6">Cutting-edge scanners reading raw architecture error codes, removing phantom faults and optimizing engine management maps.</p>
+                        <a href="#contact" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-extrabold text-ducati-red hover:text-white transition">
+                            Book ECU Diagnosis <i class="fas fa-chevron-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Value Points -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-zinc-900 pt-16">
+                <div class="p-4">
+                    <span class="ducati-font text-5xl font-black text-zinc-800 block mb-3">01</span>
+                    <h4 class="ducati-font text-lg font-bold uppercase text-white mb-2">Surgical Precision</h4>
+                    <p class="text-zinc-500 text-sm font-light">From spark plugs gap adjustments to complete camshaft calibration, we employ micron-exact mechanical guidelines.</p>
+                </div>
+                <div class="p-4">
+                    <span class="ducati-font text-5xl font-black text-zinc-800 block mb-3">02</span>
+                    <h4 class="ducati-font text-lg font-bold uppercase text-white mb-2">Premium Consumables</h4>
+                    <p class="text-zinc-500 text-sm font-light">We exclusively match premium manufacturers like Motul, BMC Performance Air Filters, and specialized engine coolants.</p>
+                </div>
+                <div class="p-4">
+                    <span class="ducati-font text-5xl font-black text-zinc-800 block mb-3">03</span>
+                    <h4 class="ducati-font text-lg font-bold uppercase text-white mb-2">Certified Integrity</h4>
+                    <p class="text-zinc-500 text-sm font-light">No shadow work. Clean checklists, thorough mechanical report-out cards, and clear post-service walk-throughs.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sleek Interactive Catalog Section (Styled like Ducati Model Selector) -->
+    <section id="catalog" class="py-24 bg-[#0a0a0a] border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.3em] text-ducati-red font-bold block mb-3">The Garage Catalogue</span>
+                <h2 class="ducati-font text-4xl sm:text-5xl font-bold uppercase text-white tracking-tight">SPECIALIST PACKAGES</h2>
+                <div class="h-1 w-16 bg-ducati-red mx-auto mt-6"></div>
+            </div>
+
+            <!-- Dynamic Ducati-Style Category Navigation Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-16">
+                <button onclick="switchCategory('all')" id="btn-all" class="cat-btn px-8 py-3 bg-ducati-red text-white text-xs uppercase tracking-widest font-bold transition duration-300 skew-x-[-10deg]">
+                    <span class="inline-block skew-x-[10deg]">All Programs</span>
+                </button>
+                <button onclick="switchCategory('hygiene')" id="btn-hygiene" class="cat-btn px-8 py-3 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white text-xs uppercase tracking-widest font-bold transition duration-300 skew-x-[-10deg]">
+                    <span class="inline-block skew-x-[10deg]">Detailing &amp; Washing</span>
+                </button>
+                <button onclick="switchCategory('mechanics')" id="btn-mechanics" class="cat-btn px-8 py-3 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white text-xs uppercase tracking-widest font-bold transition duration-300 skew-x-[-10deg]">
+                    <span class="inline-block skew-x-[10deg]">Mechanical Tuning</span>
+                </button>
+                <button onclick="switchCategory('addons')" id="btn-addons" class="cat-btn px-8 py-3 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white text-xs uppercase tracking-widest font-bold transition duration-300 skew-x-[-10deg]">
+                    <span class="inline-block skew-x-[10deg]">Upgrades &amp; Hardware</span>
+                </button>
+            </div>
+
+            <!-- Modern Card Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="catalog-grid">
+                
+                <!-- Package 1: 3M Foam Wash (Moped) -->
+                <div class="model-card bg-black border border-zinc-900 rounded-lg overflow-hidden flex flex-col justify-between hover:border-ducati-red/50 transition duration-300" data-category="hygiene">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1599256621730-535171e28e50?auto=format&fit=crop&w=600&q=80" alt="Moped detailing" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-zinc-900/90 text-white text-[10px] tracking-widest uppercase font-bold py-1 px-3 border border-zinc-800">Detox</span>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="ducati-font text-xl font-bold uppercase text-white mb-2">3M Foam Wash (Moped)</h4>
+                            <p class="text-zinc-500 text-xs font-light leading-relaxed mb-4">Meticulous cleaning targeting engine casing corners and standard chassis lines. Complete polish coat finish.</p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="#contact" onclick="preselectService('3M Foam Wash (Moped)')" class="block text-center bg-zinc-900 hover:bg-ducati-red hover:text-white text-zinc-400 text-[10px] uppercase tracking-widest font-bold py-3.5 transition duration-300">
+                            Enquire Program
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 2: 3M Foam Wash (Motorcycle) -->
+                <div class="model-card bg-black border border-zinc-900 rounded-lg overflow-hidden flex flex-col justify-between hover:border-ducati-red/50 transition duration-300" data-category="hygiene">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1449495169669-7b118f960237?auto=format&fit=crop&w=600&q=80" alt="Motorcycle Wash" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-zinc-900/90 text-white text-[10px] tracking-widest uppercase font-bold py-1 px-3 border border-zinc-800">Detox</span>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="ducati-font text-xl font-bold uppercase text-white mb-2">3M Foam Wash (Motorcycle)</h4>
+                            <p class="text-zinc-500 text-xs font-light leading-relaxed mb-4">Precision detailed spray, high foam saturation, exhaustive chain scrubbing and premium lubricant coating.</p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="#contact" onclick="preselectService('3M Foam Wash (Motorcycle)')" class="block text-center bg-zinc-900 hover:bg-ducati-red hover:text-white text-zinc-400 text-[10px] uppercase tracking-widest font-bold py-3.5 transition duration-300">
+                            Enquire Program
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 3: 3M Foam Wash (MUV/SUV) -->
+                <div class="model-card bg-black border border-zinc-900 rounded-lg overflow-hidden flex flex-col justify-between hover:border-ducati-red/50 transition duration-300" data-category="hygiene">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1601393005322-2977464a407e?auto=format&fit=crop&w=600&q=80" alt="MUV Wash" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-zinc-900/90 text-white text-[10px] tracking-widest uppercase font-bold py-1 px-3 border border-zinc-800">Detox</span>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="ducati-font text-xl font-bold uppercase text-white mb-2">3M Foam Wash (MUV/SUV)</h4>
+                            <p class="text-zinc-500 text-xs font-light leading-relaxed mb-4">High-pressure exterior clear down, meticulous underbody spray-cleansing, internal vacuuming, and premium dash-restore polish.</p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="#contact" onclick="preselectService('3M Foam Wash (MUV/SUV)')" class="block text-center bg-zinc-900 hover:bg-ducati-red hover:text-white text-zinc-400 text-[10px] uppercase tracking-widest font-bold py-3.5 transition duration-300">
+                            Enquire Program
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 4: Superbike Servicing -->
+                <div class="model-card bg-black border border-zinc-900 rounded-lg overflow-hidden flex flex-col justify-between hover:border-ducati-red/50 transition duration-300" data-category="mechanics">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1558981403-c5f91cbba527?auto=format&fit=crop&w=600&q=80" alt="Superbike tech" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-ducati-red text-white text-[10px] tracking-widest uppercase font-bold py-1 px-3">Tuning</span>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="ducati-font text-xl font-bold uppercase text-white mb-2">Superbike Servicing</h4>
+                            <p class="text-zinc-500 text-xs font-light leading-relaxed mb-4">Designed for track and multi-cylinder models. Motul premium fluids flushing, filter replacement, chain alignment and computer sync.</p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="#contact" onclick="preselectService('Superbike Servicing')" class="block text-center bg-zinc-900 hover:bg-ducati-red hover:text-white text-zinc-400 text-[10px] uppercase tracking-widest font-bold py-3.5 transition duration-300">
+                            Enquire Program
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 5: Supercar Servicing -->
+                <div class="model-card bg-black border border-zinc-900 rounded-lg overflow-hidden flex flex-col justify-between hover:border-ducati-red/50 transition duration-300" data-category="mechanics">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=600&q=80" alt="Supercar diagnostic" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-ducati-red text-white text-[10px] tracking-widest uppercase font-bold py-1 px-3">Tuning</span>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="ducati-font text-xl font-bold uppercase text-white mb-2">Supercar Servicing</h4>
+                            <p class="text-zinc-500 text-xs font-light leading-relaxed mb-4">Precision mechanical inspection, luxury grade synthetic fluid flushes, brake calibration, and premium system diagnostic checkups.</p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="#contact" onclick="preselectService('Supercar Servicing')" class="block text-center bg-zinc-900 hover:bg-ducati-red hover:text-white text-zinc-400 text-[10px] uppercase tracking-widest font-bold py-3.5 transition duration-300">
+                            Enquire Program
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 6: Auto Cooling AC Care -->
+                <div class="model-card bg-black border border-zinc-900 rounded-lg overflow-hidden flex flex-col justify-between hover:border-ducati-red/50 transition duration-300" data-category="mechanics">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&w=600&q=80" alt="AC Service" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-ducati-red text-white text-[10px] tracking-widest uppercase font-bold py-1 px-3">Tuning</span>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="ducati-font text-xl font-bold uppercase text-white mb-2">Auto Cooling Care</h4>
+                            <p class="text-zinc-500 text-xs font-light leading-relaxed mb-4">Comprehensive HVAC diagnostics, airflow velocity optimization, filter core cleaning, and climate gas refreshments.</p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="#contact" onclick="preselectService('Auto Cooling Care')" class="block text-center bg-zinc-900 hover:bg-ducati-red hover:text-white text-zinc-400 text-[10px] uppercase tracking-widest font-bold py-3.5 transition duration-300">
+                            Enquire Program
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 7: Aftermarket Installs -->
+                <div class="model-card bg-black border border-zinc-900 rounded-lg overflow-hidden flex flex-col justify-between hover:border-ducati-red/50 transition duration-300" data-category="addons">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=600&q=80" alt="Hardware upgrade" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-zinc-900/90 text-white text-[10px] tracking-widest uppercase font-bold py-1 px-3 border border-zinc-800">Parts</span>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="ducati-font text-xl font-bold uppercase text-white mb-2">Performance Hardware</h4>
+                            <p class="text-zinc-500 text-xs font-light leading-relaxed mb-4">Direct alignment of world-class air intake systems (BMC), customized sports exhausts, high-power batteries, and specialized tires.</p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="#contact" onclick="preselectService('Aftermarket Upgrades')" class="block text-center bg-zinc-900 hover:bg-ducati-red hover:text-white text-zinc-400 text-[10px] uppercase tracking-widest font-bold py-3.5 transition duration-300">
+                            Enquire Program
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 8: Sanitize & Detach -->
+                <div class="model-card bg-black border border-zinc-900 rounded-lg overflow-hidden flex flex-col justify-between hover:border-ducati-red/50 transition duration-300" data-category="hygiene">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=600&q=80" alt="Interior sanitize" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-zinc-900/90 text-white text-[10px] tracking-widest uppercase font-bold py-1 px-3 border border-zinc-800">Detox</span>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="ducati-font text-xl font-bold uppercase text-white mb-2">Interior Sanitize</h4>
+                            <p class="text-zinc-500 text-xs font-light leading-relaxed mb-4">Complete neutralization of bad cabin odors, vaporized ventilation disinfection, and surface conditioning.</p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="#contact" onclick="preselectService('Interior Sanitize')" class="block text-center bg-zinc-900 hover:bg-ducati-red hover:text-white text-zinc-400 text-[10px] uppercase tracking-widest font-bold py-3.5 transition duration-300">
+                            Enquire Program
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Package 9: OBD Diagnostic Scan -->
+                <div class="model-card bg-black border border-zinc-900 rounded-lg overflow-hidden flex flex-col justify-between hover:border-ducati-red/50 transition duration-300" data-category="addons">
+                    <div>
+                        <div class="h-60 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=600&q=80" alt="diagnostics OBD" class="w-full h-full object-cover">
+                            <span class="absolute top-4 right-4 bg-zinc-900/90 text-white text-[10px] tracking-widest uppercase font-bold py-1 px-3 border border-zinc-800">Parts</span>
+                        </div>
+                        <div class="p-8">
+                            <h4 class="ducati-font text-xl font-bold uppercase text-white mb-2">OBD Digital Scan</h4>
+                            <p class="text-zinc-500 text-xs font-light leading-relaxed mb-4">Systematic scanning of architecture modules, active error removal, diagnostics sensor tracking, and ECU reporting.</p>
+                        </div>
+                    </div>
+                    <div class="px-8 pb-8 pt-2">
+                        <a href="#contact" onclick="preselectService('OBD Digital Scan')" class="block text-center bg-zinc-900 hover:bg-ducati-red hover:text-white text-zinc-400 text-[10px] uppercase tracking-widest font-bold py-3.5 transition duration-300">
+                            Enquire Program
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Dynamic Contact Booking System -->
+    <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 bg-black relative">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <!-- Information Panel -->
+            <div class="flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="h-[1px] w-12 bg-ducati-red"></span>
+                        <span class="text-xs uppercase tracking-[0.4em] text-ducati-red font-bold">Contact Centre</span>
+                    </div>
+                    <h2 class="ducati-font text-4xl sm:text-5xl font-bold uppercase tracking-tight text-white mb-8">
+                        VISIT THE <span class="text-ducati-red">WORKSHOP</span>
+                    </h2>
+
+                    <!-- Contact Cards -->
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-zinc-950 border border-zinc-800 flex items-center justify-center text-ducati-red shrink-0 skew-x-[-10deg]">
+                                <i class="fas fa-map-marker-alt text-lg skew-x-[10deg]"></i>
+                            </div>
+                            <div>
+                                <h5 class="ducati-font text-sm uppercase tracking-wider font-bold text-white mb-1">Our Premises</h5>
+                                <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                                    Dr. F.A. Hafiz M.S Premises, 3rd Cross,<br>Nehru Nagar, Belagavi, Karnataka 590010
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-zinc-950 border border-zinc-800 flex items-center justify-center text-ducati-red shrink-0 skew-x-[-10deg]">
+                                <i class="fas fa-clock text-lg skew-x-[10deg]"></i>
+                            </div>
+                            <div>
+                                <h5 class="ducati-font text-sm uppercase tracking-wider font-bold text-white mb-1">Operational Hours</h5>
+                                <p class="text-zinc-400 text-sm font-light">
+                                    Monday - Saturday: <span class="text-white font-semibold">10:00 AM – 6:00 PM</span>
+                                </p>
+                                <span class="text-[9px] uppercase tracking-widest text-emerald-500 font-extrabold mt-1.5 inline-block">Service Slots Available</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-zinc-950 border border-zinc-800 flex items-center justify-center text-ducati-red shrink-0 skew-x-[-10deg]">
+                                <i class="fas fa-envelope text-lg skew-x-[10deg]"></i>
+                            </div>
+                            <div>
+                                <h5 class="ducati-font text-sm uppercase tracking-wider font-bold text-white mb-1">Electronic Mail</h5>
+                                <p class="text-zinc-400 text-sm font-light">efhmotorcycles@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Frame Integration (Styled Minimal/Dark) -->
+                <div class="mt-12 h-60 rounded-lg overflow-hidden border border-zinc-900 grayscale brightness-75 contrast-125">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15358.583489849318!2d74.5024765!3d15.8670119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf669f46487a31%3A0xc0d2b152d11e564d!2sNehru%20Nagar%2C%20Belagavi%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- Modern Form Block (Styled like Ducati's Configurator Inquiry) -->
+            <div class="bg-[#0a0a0a] border border-zinc-900 p-8 sm:p-12 rounded-lg relative">
+                <div class="absolute -top-1 -right-1 bg-ducati-red h-1.5 w-16"></div>
+                
+                <h3 class="ducati-font text-2xl font-extrabold text-white uppercase mb-2">Service Request</h3>
+                <p class="text-zinc-500 text-xs font-light mb-8 uppercase tracking-wider">Book physical inspection slots with our lead diagnosticians.</p>
+                
+                <form class="space-y-6" id="ducatiEnquiryForm">
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-2 font-bold">Your Name</label>
+                        <input type="text" required class="w-full bg-black border border-zinc-800 rounded-none px-5 py-4 focus:outline-none focus:border-ducati-red text-white text-sm transition">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-2 font-bold">Contact Number</label>
+                            <input type="tel" required class="w-full bg-black border border-zinc-800 rounded-none px-5 py-4 focus:outline-none focus:border-ducati-red text-white text-sm transition" placeholder="+91">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-2 font-bold">Selected Program</label>
+                            <select id="programSelector" class="w-full bg-black border border-zinc-800 rounded-none px-5 py-4 focus:outline-none focus:border-ducati-red text-zinc-400 text-sm transition">
+                                <option value="General Inspection">Select Service</option>
+                                <option value="3M Foam Wash (Moped)">3M Foam Wash (Moped)</option>
+                                <option value="3M Foam Wash (Motorcycle)">3M Foam Wash (Motorcycle)</option>
+                                <option value="3M Foam Wash (MUV/SUV)">3M Foam Wash (MUV/SUV)</option>
+                                <option value="Superbike Servicing">Superbike Servicing</option>
+                                <option value="Supercar Servicing">Supercar Servicing</option>
+                                <option value="Restoration Projects">Restoration Projects</option>
+                                <option value="Aftermarket Upgrades">Aftermarket Upgrades</option>
+                                <option value="Auto Cooling Care">Auto Cooling Care</option>
+                                <option value="OBD Digital Scan">OBD Digital Scan</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-2 font-bold">Vehicle Model &amp; Description</label>
+                        <textarea required class="w-full bg-black border border-zinc-800 rounded-none px-5 py-4 h-32 focus:outline-none focus:border-ducati-red text-white text-sm transition" placeholder="Example: Ducati Monster 821, Audi A4..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-ducati-red hover:bg-white text-white hover:text-black py-5 rounded-none text-xs font-bold uppercase tracking-[0.25em] transition duration-300 btn-diagonal">
+                        Transmit Request
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Ducati-Style Large Scale Footer -->
+    <footer class="bg-black border-t border-zinc-900 py-16 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="https://instagram.com/efhmotorcars" target="_blank" class="w-11 h-11 rounded-none bg-zinc-950 border border-zinc-900 text-zinc-400 hover:text-ducati-red hover:border-ducati-red flex items-center justify-center transition-all duration-300">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/people/EFH-Motorcycles-EFH-Motorcars/100063942008432/" target="_blank" class="w-11 h-11 rounded-none bg-zinc-950 border border-zinc-900 text-zinc-400 hover:text-ducati-red hover:border-ducati-red flex items-center justify-center transition-all duration-300">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/918197180481" target="_blank" class="w-11 h-11 rounded-none bg-zinc-950 border border-zinc-900 text-zinc-400 hover:text-ducati-red hover:border-ducati-red flex items-center justify-center transition-all duration-300">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <div class="mb-8">
+                <span class="ducati-font text-3xl font-black text-white tracking-tighter">EFH MOTORS</span>
+                <p class="text-zinc-600 text-[9px] uppercase tracking-[0.4em] mt-2">Bespoke Italian-Class Workmanship • Belagavi</p>
+            </div>
+
+            <div class="border-t border-zinc-900 pt-8 flex flex-col md:flex-row items-center justify-between text-[10px] uppercase tracking-wider text-zinc-600 gap-4">
+                <p>© 2026 EFH MOTORCYCLES &amp; MOTORCARS. ALL RIGHTS RESERVED.</p>
+                <div class="flex gap-6">
+                    <a href="#experience" class="hover:text-white transition">DNA</a>
+                    <span class="text-zinc-800">•</span>
+                    <a href="#catalog" class="hover:text-white transition">Garage Catalog</a>
+                    <span class="text-zinc-800">•</span>
+                    <a href="#contact" class="hover:text-white transition">Bookings</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Interactive JS Controller -->
+    <script>
+        // Ducati-Style Categorized Service Switcher
+        function switchCategory(category) {
+            const cards = document.querySelectorAll('.model-card');
+            const buttons = document.querySelectorAll('.cat-btn');
+
+            // Reset tabs
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-ducati-red', 'text-white');
+                btn.classList.add('bg-zinc-900', 'text-zinc-400');
+            });
+
+            // Set active tab
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-ducati-red', 'text-white');
+                activeBtn.classList.remove('bg-zinc-900', 'text-zinc-400');
+            }
+
+            // Animate filter grid cards
+            cards.forEach(card => {
+                const itemCat = card.getAttribute('data-category');
+                if (category === 'all' || itemCat === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Pre-select form dropdown options dynamically when clicking catalog items
+        function preselectService(serviceName) {
+            const dropdown = document.getElementById('programSelector');
+            if(dropdown) {
+                dropdown.value = serviceName;
+                // Style highlight focus effect
+                dropdown.classList.add('border-ducati-red');
+                setTimeout(() => dropdown.classList.remove('border-ducati-red'), 1500);
+            }
+        }
+
+        // Handle the dynamic form submit with success feedback
+        document.getElementById('ducatiEnquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerText;
+
+            btn.innerText = 'TRANSMITTING REQS...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerText = 'SLOT REGISTERED SUCCESSFULLY';
+                btn.classList.replace('bg-ducati-red', 'bg-emerald-600');
+                this.reset();
+                
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.replace('bg-emerald-600', 'bg-ducati-red');
+                    btn.disabled = false;
+                }, 3000);
+            }, 1200);
+        });
+    </script>
+</body>
+</html>
